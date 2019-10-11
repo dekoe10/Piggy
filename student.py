@@ -18,7 +18,7 @@ class Piggy(PiggyParent):
         '''
         self.LEFT_DEFAULT = 80
         self.RIGHT_DEFAULT = 80
-        self.MIDPOINT = 1500  # what servo command (1000-2000) is straight forward for your bot?
+        self.MIDPOINT = 1775  # what servo command (1000-2000) is straight forward for your bot?
         self.load_defaults()
         
 
@@ -55,14 +55,21 @@ class Piggy(PiggyParent):
     '''
 
     def dance(self):
-        self.your_move()
-        #list of moves
-
-    def your_move(self):
-        self.right()
-        time.sleep(1)
-        self.stop()
+        self.shuffle()
+        #self.dab()
+        #self.thecleary()
+        #self.moonwalk()
+        #self.breakdance()
+   
+    def shuffle(self):
+        self.turn_by_deg(270)
         self.servo(1000)
+        time.sleep(.5)
+        self.right()
+        self.servo(2000)
+        time.sleep(.5)
+        self.stop()
+    
 
     def scan(self):
         """Sweep the servo and populate the scan_data dictionary"""
