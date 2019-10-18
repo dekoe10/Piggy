@@ -55,13 +55,15 @@ class Piggy(PiggyParent):
     '''
 
     def dance(self):
+        """all dances are inputed here"""
         self.shuffle()
         self.dab()
-        #self.thecleary()
         self.moonwalk()
+        self.thecleary()
         #self.breakdance()
    
     def shuffle(self):
+        """makes the robot do the classic shuffle"""
         self.turn_by_deg(270)
         self.servo(1000)
         time.sleep(.5)
@@ -71,6 +73,7 @@ class Piggy(PiggyParent):
         self.stop()
     
     def dab(self):
+        """ makes the servo move in order to show an arm moving """
         self.servo(1000)
         self.turn_by_deg(270)
         self.left
@@ -78,6 +81,7 @@ class Piggy(PiggyParent):
         self.stop
     
     def moonwalk(self):
+        """ the classic moonwalk forcing the robot to move backwords the entire time"""
         self.back
         time.sleep(1)
         self.turn_by_deg(-30)
@@ -87,7 +91,25 @@ class Piggy(PiggyParent):
         self.stop
     
     def thecleary(self):
+        """ originated from the Logan Cleary himself, but designed by Dylan Dekoe"""
+        self.forward
         self.left
+        self.servo(1000)
+        self.turn_by_deg(180)
+        self.sleep(1)
+        self.right
+        self.servo(1500)
+        self.turn_to_deg(270)
+        self.stop
+    
+    def breakdance(self):
+        
+
+
+
+
+
+
 
     
     
