@@ -56,9 +56,9 @@ class Piggy(PiggyParent):
 
     def dance(self):
         self.shuffle()
-        #self.dab()
+        self.dab()
         #self.thecleary()
-        #self.moonwalk()
+        self.moonwalk()
         #self.breakdance()
    
     def shuffle(self):
@@ -69,6 +69,27 @@ class Piggy(PiggyParent):
         self.servo(2000)
         time.sleep(1)
         self.stop()
+    
+    def dab(self):
+        self.servo(1000)
+        self.turn_by_deg(270)
+        self.left
+        self.sleep(1)
+        self.stop
+    
+    def moonwalk(self):
+        self.back
+        time.sleep(1)
+        self.turn_by_deg(-30)
+        self.back
+        self.turn_by_deg(60)
+        self.back()
+        self.stop
+    
+    def thecleary(self):
+        self.left
+
+    
     
 
     def scan(self):
