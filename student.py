@@ -92,15 +92,19 @@ class Piggy(PiggyParent):
     
     def thecleary(self):
         """ originated from the Logan Cleary himself, but designed by Dylan Dekoe"""
-        self.forward
-        self.left
+        self.fwd(left=90, right=90)
+        time.sleep(.5)
+        self.left()
         self.servo(1000)
+        time.sleep(.5)
+        self.stop()
+        time.sleep(.2)
         self.turn_by_deg(180)
-        self.sleep(1)
-        self.right
+        self.right()
         self.servo(1500)
+        time.sleep(.5)
         self.turn_to_deg(270)
-        self.stop
+        self.stop()
     
     def breakdance(self):
         
