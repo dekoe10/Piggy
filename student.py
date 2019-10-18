@@ -60,7 +60,7 @@ class Piggy(PiggyParent):
         self.dab()
         self.moonwalk()
         self.thecleary()
-        #self.breakdance()
+    
    
     def shuffle(self):
         """makes the robot do the classic shuffle"""
@@ -74,12 +74,13 @@ class Piggy(PiggyParent):
     
     def dab(self):
         """ makes the servo move in order to show an arm moving """
-        self.servo(1000)
-        self.turn_by_deg(270)
-        self.left
-        self.sleep(1)
-        self.stop
-    
+        for d in range(3):
+            self.servo(1000)
+            self.turn_by_deg(270)
+            self.left()
+            time.sleep(.5)
+            self.stop
+        
     def moonwalk(self):
         """ the classic moonwalk forcing the robot to move backwords the entire time"""
         self.back
@@ -105,16 +106,6 @@ class Piggy(PiggyParent):
         time.sleep(.5)
         self.turn_to_deg(270)
         self.stop()
-    
-    def breakdance(self):
-        
-
-
-
-
-
-
-
     
     
 
