@@ -74,7 +74,7 @@ class Piggy(PiggyParent):
     
     def dab(self):
         """ makes the servo move in order to show an arm moving """
-        for d in range(3):
+        for x in range(3):
             self.servo(1000)
             self.turn_by_deg(270)
             self.left()
