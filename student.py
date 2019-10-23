@@ -57,11 +57,12 @@ class Piggy(PiggyParent):
     def dance(self):
         """all dances are inputed here"""
     # check to see its safe
-    if not self.safetycheck():
+    if not self.safety_check():
         print("Not cool bro. Not doing a dance")
         return
     else:
         print("It's safe let's boogie :P")
+    
     for x in range(3):
         self.shuffle()
         self.dab()
