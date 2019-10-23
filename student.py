@@ -59,7 +59,7 @@ class Piggy(PiggyParent):
     # check to see its safe
     if not self.safety_check():
         print("Not cool bro. Not doing a dance")
-        return
+        return #close method
     else:
         print("It's safe let's boogie :P")
     
@@ -82,18 +82,19 @@ class Piggy(PiggyParent):
    
     def shuffle(self):
         """makes the robot do the classic shuffle"""
-        self.turn_by_deg(270)
-        self.servo(1000)
-        time.sleep(.5)
-        self.turn_by_deg(15)
-        self.servo(2000)
-        time.sleep(1)
-        self.stop()
+        for x in range(3):
+            self.turn_by_deg(270)
+            self.servo(1000)
+            time.sleep(.5)
+            self.turn_by_deg(15)
+            self.servo(2000)
+            time.sleep(1)
+            self.stop()
     
     def dab(self):
         """ makes the servo move in order to show an arm moving """
         for x in range(3):
-            self.servo(1000)
+            self.servo(1000, 2000, 50)
             self.turn_by_deg(270)
             self.left()
             time.sleep(.5)
