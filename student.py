@@ -56,11 +56,28 @@ class Piggy(PiggyParent):
 
     def dance(self):
         """all dances are inputed here"""
+    # check to see its safe
+    if not self.safetycheck():
+        print("Not cool bro. Not doing a dance")
+        return
+    else:
+        print("It's safe let's boogie :P")
+    for x in range(3):
         self.shuffle()
         self.dab()
         self.moonwalk()
         self.thecleary()
     
+    def safe_to_dance(self):
+        """Does a 360 distance check and returns true if safe"""
+        for x in range(4):
+            for ang in range(1000, 2001, 100):
+                self.servo(ang)
+                time.sleep(.1)
+                if self.read_distance() < 250:
+                    return False
+            self.turn_to_deg(90)
+        return True 
    
     def shuffle(self):
         """makes the robot do the classic shuffle"""
