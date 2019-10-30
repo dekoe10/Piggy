@@ -141,9 +141,9 @@ class Piggy(PiggyParent):
         trigger_distance = 250
         count = 0
         starting_position = self.get_heading() # wrtie down starting position
-        self.right(primary=40, counter=-40)
+        self.right(primary=40, counter=-60)
         time.sleep(0.1)
-        while abs(self.get_heading() - starting_position) < 2:
+        while abs(self.get_heading() - starting_position) < 1:
             if self.read_distance() < trigger_distance and not found_something:
                 found_something = True 
                 count += 1
