@@ -156,15 +156,6 @@ class Piggy(PiggyParent):
         print("i found this many things: %d" % count)
         return count 
 
-
-    def nav(self):
-        print("-----------! NAVIGATION ACTIVATED !------------\n")
-        print("-------- [ Press CTRL + C to stop me ] --------\n")
-        print("-----------! NAVIGATION ACTIVATED !------------\n")
-        while self.read_dstance() > 250:
-            self.fwd()
-            time.sleep(.01)
-        self.stop()
         
     def quick_check(self):
         # three quick checks
@@ -205,7 +196,8 @@ class Piggy(PiggyParent):
                 self.turn_by_deg(-45)
             else:
                 self.turn_by_deg(45)
-
+    
+    
 
 
 
