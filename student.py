@@ -172,35 +172,35 @@ class Piggy(PiggyParent):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
 
      while True:
-            self.servo(self.MIDPOINT)
-            while self.quick_check():
-                self.cornerCount = 0
-                self.fwd()
-                time.sleep(.01)
-            self.stop()
-            self.cornerCount += 1
-            self.shakeHeadInDisgust()
-            if self.cornerCount == 4:
-                self.escape()
-            self.scan()            
-            #traversal
-            left_total = 0
-            left_count = 0
-            right_total = 0
-            right_count = 0
-            for ang, dist in self.scan_data.items():
-                if ang < self.MIDPOINT: 
-                    right_total += dist
-                    right_count += 1
-                else:
-                    left_total += dist
-                    left_count += 1
-            left_avg = left_total / left_count
-            right_avg = right_total / right_count
-            if left_avg > right_avg:
-                self.turn_by_deg(-35)
+        self.servo(self.MIDPOINT)
+        while self.quick_check():
+            self.cornerCount = 0
+            self.fwd()
+            time.sleep(.01)
+        self.stop()
+        self.cornerCount += 1
+        self.shakeHeadInDisgust()
+        if self.cornerCount == 4:
+            self.escape()
+        self.scan()            
+        #traversal
+        left_total = 0
+        left_count = 0
+        right_total = 0
+        right_count = 0
+        for ang, dist in self.scan_data.items():
+            if ang < self.MIDPOINT: 
+                right_total += dist
+                right_count += 1
             else:
-                self.turn_by_deg(35)
+                left_total += dist
+                left_count += 1
+        left_avg = left_total / left_count
+        right_avg = right_total / right_count
+        if left_avg > right_avg:
+            self.turn_by_deg(-35)
+        else:
+            self.turn_by_deg(35)
     
     # make method that does 360 check 
     #make corner count so it turns 180 and finds way out
