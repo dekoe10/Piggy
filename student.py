@@ -180,7 +180,7 @@ class Piggy(PiggyParent):
                 time.sleep(.01)
             self.stop()
             self.cornerCount += 1
-            if self.cornerCount == 4:
+            if self.cornerCount == 1:
                 self.escape()
             self.scan()            
             #traversal
