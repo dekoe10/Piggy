@@ -206,6 +206,16 @@ class Piggy(PiggyParent):
         # make method that does 360 check 
         #make corner count so it turns 180 and finds way out
 
+    def hold_postion (self):
+        self.servo(self.MIDPOINT)
+        start = self.get_heading
+        self.read_distance
+        if self.read_distance()
+        
+        
+        # take note of starting position
+        #
+
     
 
 
