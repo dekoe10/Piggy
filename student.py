@@ -168,22 +168,27 @@ class Piggy(PiggyParent):
         return True
         
     def nav(self):
+​
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("-------- [ Press CTRL + C to stop me ] --------\n")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
-
-        while True:
-            
+        print("Wait a second. \nI can't navigate the maze at all. Please give my programmer a zero.")
+        
+        corner_count = 0
+        self.EXIT_HEADING = self.get_heading()
+        
+        while True:    
             self.servo(self.MIDPOINT)
             while self.quick_check():
-                self.cornerCount = 0
+                corner_count = 0
                 self.fwd()
                 time.sleep(.01)
             self.stop()
-            self.cornerCount += 1
-            if self.cornerCount == 1:
-                self.escape()
-            self.scan()            
+            self.scan()
+            # turns out of cornoer if stuck
+            corner_count += 1
+            if corner_count == 3:
+                self.turntoexit()
             #traversal
             left_total = 0
             left_count = 0
@@ -199,9 +204,9 @@ class Piggy(PiggyParent):
             left_avg = left_total / left_count
             right_avg = right_total / right_count
             if left_avg > right_avg:
-                self.turn_by_deg(-35)
+                self.turn_by_deg(-45)
             else:
-                self.turn_by_deg(35)
+                self.turn_by_deg(45)
         
         # make method that does 360 check 
         #make corner count so it turns 180 and finds way out
