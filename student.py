@@ -168,7 +168,6 @@ class Piggy(PiggyParent):
         return True
         
     def nav(self):
-​
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("-------- [ Press CTRL + C to stop me ] --------\n")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
