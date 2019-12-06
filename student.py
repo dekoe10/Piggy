@@ -185,11 +185,11 @@ class Piggy(PiggyParent):
                 time.sleep(.01)
             self.stop()
             self.scan()
-            # turns out of cornoer if stuck
+            # if stuck in corner turns
             corner_count += 1
             if corner_count == 3:
                 self.turntoexit()
-            #traversal
+           #turn
             left_total = 0
             left_count = 0
             right_total = 0
