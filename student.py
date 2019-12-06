@@ -211,19 +211,13 @@ class Piggy(PiggyParent):
             time.sleep(.1)
             current_angle = self.get_heading()
             if abs(started_at - current_angle) > 20:
-                self.turn_to_deg(started_at
-        
-        
-        # take note of starting position
-        #
-
-    
-
+                self.turn_to_deg(started_at)
 
 
 
 ###########
 ## MAIN APP
+
 if __name__ == "__main__":  # only run this loop if this is the main file
 
     p = Piggy()
