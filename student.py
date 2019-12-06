@@ -173,7 +173,7 @@ class Piggy(PiggyParent):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("Wait a second. \nI can't navigate the maze at all. Please give my programmer a zero.")
         
-        corner_count = 0
+        corner_count = 3
         self.EXIT_HEADING = self.get_heading()
         
         while True:    
@@ -185,7 +185,7 @@ class Piggy(PiggyParent):
             self.stop()
             self.scan()
             # if stuck in corner turns
-            corner_count += 3
+            corner_count += 1
             if corner_count == 3:
                 self.turntoexit()
            #turn
