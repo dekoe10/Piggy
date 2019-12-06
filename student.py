@@ -167,13 +167,22 @@ class Piggy(PiggyParent):
         #if i get to the end, this means i didn't find anything dangerous
         return True
         
+    def turn_to_exit(self):
+        start = self.get_heading()
+        self.turn_to_deg(self.EXIT_HEADING)
+        if not self.quick_check():
+            self.turn_to_deg(start)
+            return False
+        return True
+
+
     def nav(self):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("-------- [ Press CTRL + C to stop me ] --------\n")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("Wait a second. \nI can't navigate the maze at all. Please give my programmer a zero.")
         
-        corner_count = 3
+        corner_count = 0
         self.EXIT_HEADING = self.get_heading()
         
         while True:    
@@ -187,7 +196,7 @@ class Piggy(PiggyParent):
             # if stuck in corner turns
             corner_count += 1
             if corner_count == 3:
-                self.turntoexit()
+                self.turn_to_exit()
            #turn
             left_total = 0
             left_count = 0
