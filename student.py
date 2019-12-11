@@ -1,7 +1,7 @@
 from teacher import PiggyParent
 import sys
 import time
-import datetime from datetime
+from datetime import datetime
 class Piggy(PiggyParent):
 
     '''
