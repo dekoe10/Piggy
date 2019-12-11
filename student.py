@@ -1,7 +1,7 @@
 from teacher import PiggyParent
 import sys
 import time
-
+import datetime from datetime
 class Piggy(PiggyParent):
 
     '''
@@ -17,6 +17,7 @@ class Piggy(PiggyParent):
         MAGIC NUMBERS <-- where we hard-code our settings
         '''
         self.LEFT_DEFAULT = 80
+        self.start_time = 0
         self.RIGHT_DEFAULT = 80
         self.SAFE_DIST = 350
         self.MIDPOINT = 1775  # what servo command (1000-2000) is straight forward for your bot?
@@ -175,16 +176,17 @@ class Piggy(PiggyParent):
             return False
         return True
 
-
+    def time_spent(self):
+        print(f"I naved for{datetime.now() - self.start_time}")
+    
     def nav(self):
-        starttime = time.time()
-        input("it took this many seconds")
-        currenttime = time.time() - starttime
-        
+
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("-------- [ Press CTRL + C to stop me ] --------\n")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("Wait a second. \nI can't navigate the maze at all. Please give my programmer a zero.")
+        
+        self.start_time = datetime.now()
         
         corner_count = 0
         self.EXIT_HEADING = self.get_heading()
@@ -248,4 +250,5 @@ if __name__ == "__main__":  # only run this loop if this is the main file
             p.menu()
 
     except KeyboardInterrupt: # except the program gets interrupted by Ctrl+C on the keyboard.
+        p.time_spent()
         p.quit()  
