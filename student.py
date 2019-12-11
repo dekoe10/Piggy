@@ -178,7 +178,7 @@ class Piggy(PiggyParent):
 
     def time_spent(self):
         diff = datetime.now() - self.start_time
-        print(f"I naved for this long: {diff}")
+        print("I naved for this long: " + str(diff))
     
     def nav(self):
 
