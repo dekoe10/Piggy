@@ -177,6 +177,10 @@ class Piggy(PiggyParent):
 
 
     def nav(self):
+        starttime = time.time()
+        input("it took this many seconds")
+        currenttime = time.time() - starttime
+        
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("-------- [ Press CTRL + C to stop me ] --------\n")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
