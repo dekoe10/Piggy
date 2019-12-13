@@ -202,7 +202,7 @@ class Piggy(PiggyParent):
             self.scan()
             # if stuck in corner turns
             corner_count += 1
-            if corner_count == 3:
+            if corner_count == 1:
                 self.turn_to_exit()
            #turn
             left_total = 0
