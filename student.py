@@ -191,21 +191,21 @@ class Piggy(PiggyParent):
         self.set_motor_power(self.MOTOR_right, self.RIGHT_DEFAULT)
         self.fwd() 
     # throttle down the left motor
-        for power in range(self.LEFT_DEFAULT, 30, -10):
+        for power in range(self.LEFT_DEFAULT, 50, -10):
             self.set_motor_power(self.MOTOR_LEFT, power)
             time.sleep(.5)
         
     # throttle up the left while lowering the right
-        for power in range(30, self.LEFT_DEFAULT + 1, 10):
+        for power in range(50, self.LEFT_DEFAULT + 1, 10):
             self.set_motor_power(self.MOTOR_LEFT, power)
             time.sleep(.1)
     
-        for power in range(self.RIGHT_DEFAULT, 30, -10):
+        for power in range(self.RIGHT_DEFAULT, 50, -10):
             self.set_motor_power(self.MOTOR_RIGHT, power)
             time.sleep(.5)
         
     # throttle up the left while lowering the right
-        for power in range(30, self.RIGHT_DEFAULT + 1, 10):
+        for power in range(50, self.RIGHT_DEFAULT + 1, 10):
             self.set_motor_power(self.MOTOR_RIGHT, power)
             time.sleep(.1)
         
@@ -213,13 +213,13 @@ class Piggy(PiggyParent):
         right_speed = self.RIGHT_DEFAULT 
 
         #straighten out
-        while self.get_heading() != starting_direction
+        while self.get_heading() != starting_direction:
 
         #if i need to veer right
             if self.get_heading() < starting_direction:
                 right_speed -= 10
         #if i need to veer left   
-            elif self.get_heading() > starting_direction
+            elif self.get_heading() > starting_direction:
             left_speed -= 10
         
         self.set_motor_power(self.MOTOR_LEFT, left_speed)
