@@ -184,18 +184,18 @@ class Piggy(PiggyParent):
     
     def slither(self):
         """pass"""
-    #write down where we start
+        #write down where we start
         starting_direction = self.get_heading()
-    # start driving forward
+        # start driving forward
         self.set_motor_power(self.MOTOR_LEFT, self.LEFT_DEFAULT)
         self.set_motor_power(self.MOTOR_right, self.RIGHT_DEFAULT)
         self.fwd() 
-    # throttle down the left motor
+        # throttle down the left motor
         for power in range(self.LEFT_DEFAULT, 50, -10):
             self.set_motor_power(self.MOTOR_LEFT, power)
             time.sleep(.5)
         
-    # throttle up the left while lowering the right
+        # throttle up the left while lowering the right
         for power in range(50, self.LEFT_DEFAULT + 1, 10):
             self.set_motor_power(self.MOTOR_LEFT, power)
             time.sleep(.1)
@@ -204,7 +204,7 @@ class Piggy(PiggyParent):
             self.set_motor_power(self.MOTOR_RIGHT, power)
             time.sleep(.5)
         
-    # throttle up the left while lowering the right
+        # throttle up the left while lowering the right
         for power in range(50, self.RIGHT_DEFAULT + 1, 10):
             self.set_motor_power(self.MOTOR_RIGHT, power)
             time.sleep(.1)
