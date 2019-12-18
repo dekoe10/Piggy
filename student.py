@@ -188,7 +188,7 @@ class Piggy(PiggyParent):
         starting_direction = self.get_heading()
         # start driving forward
         self.set_motor_power(self.MOTOR_LEFT, self.LEFT_DEFAULT)
-        self.set_motor_power(self.MOTOR_right, self.RIGHT_DEFAULT)
+        self.set_motor_power(self.MOTOR_RIGHT, self.RIGHT_DEFAULT)
         self.fwd() 
         # throttle down the left motor
         for power in range(self.LEFT_DEFAULT, 70, -5):
